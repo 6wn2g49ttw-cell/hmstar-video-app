@@ -42,17 +42,23 @@ const skipAdBtn = document.getElementById("skip-ad-btn");
 let selectedVideo = null;
 let adTimerInterval = null;
 
-// ভিডিও লিস্ট স্ক্রিনে রেন্ডার করা
+// ভিডিও লিস্ট স্ক্রিনে রেন্ডার করা (থাম্বনেইল সহ)
 function renderVideos() {
     videoGrid.innerHTML = "";
     videos.forEach(video => {
         let card = document.createElement("div");
         card.className = "video-card";
+        
+        // যদি থাম্বনেইল লিংক থাকে তবে ছবি দেখাবে, না থাকলে ডিফল্ট আইকন দেখাবে
+        let thumbContent = video.thumbnail 
+            ? `<img src="${video.thumbnail}" style="width:100%; height:100%; object-fit:cover; border-radius:6px;">` 
+            : `▶`;
+
         card.innerHTML = `
-            <div class="thumbnail">▶</div>
+            <div class="thumbnail" style="overflow:hidden; display:flex; align-items:center; justify-content:center;">${thumbContent}</div>
             <div class="video-info">
                 <h3>${video.title}</h3>
-                <p>Duration: ${video.duration} | 📺 Watch Ad to Play</p>
+                <p>Duration: ${video.duration} | 📺 Click to Watch</p>
             </div>
         `;
         card.addEventListener("click", () => triggerAdBeforePlay(video));
