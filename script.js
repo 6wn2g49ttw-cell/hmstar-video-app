@@ -87,25 +87,13 @@ skipAdBtn.addEventListener("click", () => {
     playVideo(selectedVideo);
 });
 
-// ভিডিও বা ওয়েবসাইট প্লে করার লজিক (iframe দিয়ে যেকোনো .com সাইট বা ভিডিও সাপোর্ট করবে)
+// // ভিডিও বা লিങ്കে ক্লিক করলে সরাসরি ওপেন করার লজিক
 function playVideo(video) {
-    videoListSection.classList.add("hidden");
-    playerSection.classList.remove("hidden");
-    
-    nowPlaying.innerText = video.title;
-    
-    // ভিডিও প্লেয়ার কন্টেইনার সিলেক্ট করা
-    let playerWrapper = document.getElementById("player-wrapper");
-    if (!playerWrapper) {
-        // যদি র‍্যাপার না থাকে তবে ভিডিও এলিমেন্টের প্যারেন্ট ধরে নেব
-        let oldPlayer = document.getElementById("video-player");
-        playerWrapper = oldPlayer.parentElement;
+    if (tg.openLink) {
+        tg.openLink(video.url);
+    } else {
+        window.open(video.url, '_blank');
     }
-    
-    // যেকোনো ওয়েবসাইট বা এমবেড লিংক লোড করার জন্য iframe ব্যবহার করা হলো
-    playerWrapper.innerHTML = `
-        <iframe id="video-iframe" src="${video.url}" width="100%" height="250px" style="border:none; border-radius: 8px;" allowfullscreen></iframe>
-    `;
 }
 
 // ব্যাক বাটনে ক্লিক করে লিস্টে ফিরে যাওয়া
