@@ -16,14 +16,16 @@ const videos = [
   {
     id: 1,
     title: "Hamster Video 1",
-    duration: "18:59",
-    url: "https://xhamster46.desi/videos/stepsis-stop-coming-into-my-room-without-asking-or-ill-fuck-you-xhKbpdw" // এখানে আপনার .com বা যেকোনো ওয়েবসাইট/ইউটিউবের এমবেড লিংক দিন
+    duration: "3:30",
+    url: "https://www.youtube.com/watch?v=...", // আপনার ভিডিওর লিংক
+    thumbnail: "https://images.unsplash.com/photo-1...", // এখানে আপনার পছন্দের ছবির ডিরেক্ট লিংক দিন
   },
   {
     id: 2,
     title: "Hamster Video 2",
     duration: "3:30",
-    url: "https://www.youtube.com/embed/3JZ_D3ELwOQ" // আরেকটি লিংক
+    url: "https://www.youtube.com/watch?v=...",
+    thumbnail: "https://images.unsplash.com/photo-2...",
   }
 ];
 
