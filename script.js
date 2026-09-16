@@ -18,7 +18,7 @@ const videos = [
     title: "Hamster Video 1",
     duration: "18:59",
     url: "https://xhamster46.desi/videos/stepsis-stop-coming-into-my-room-without-asking-or-ill-fuck-you-xhKbpdwv=...", // আপনার ভিডিওর লিংক
-    thumbnail: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTGOT9K_PT0_5dZ6PrZwwAIvZcSPcIWFeYTKpCZKIopW6c8GgHN...", // এখানে আপনার পছন্দের ছবির ডিরেক্ট লিংক দিন
+    thumbnail: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTGOT9K_PT0_5dZ6PrZwwAIvZcSPcIWFeYTKpCZKIopW6c8GgHN.jpg", // এখানে আপনার পছন্দের ছবির ডিরেক্ট লিংক দিন
   },
   {
     id: 2,
