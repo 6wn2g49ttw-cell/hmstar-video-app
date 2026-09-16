@@ -88,16 +88,19 @@ skipAdBtn.addEventListener("click", () => {
     adModal.classList.add("hidden");
     playVideo(selectedVideo);
 });
-
-// ভিডিও প্লে করার লজিক
+// ভিডিও প্লে করার লজিক (YouTube/Web Embed)
 function playVideo(video) {
     videoListSection.classList.add("hidden");
     playerSection.classList.remove("hidden");
     
     nowPlaying.innerText = video.title;
-    videoSource.src = video.url;
-    videoPlayer.load();
-    videoPlayer.play();
+    
+    // ভিডিও প্লেয়ারের জায়গায় একটি iframe বসিয়ে দেওয়া
+    let playerContainer = document.getElementById("video-player").parentElement;
+    
+    // যদি আগে থেকেই iframe না থাকে, তাহলে ভিডিও ট্যাগটিকে iframe দিয়ে রিপ্লেস বা আপডেট করব
+    playerContainer.innerHTML = `<iframe src="${video.url}" width="100%" height="250px" frameborder="0" allowfullscreen></iframe>`;
+}
 }
 
 // ব্যাক বাটনে ক্লিক করে লিস্টে ফিরে যাওয়া
