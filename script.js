@@ -16,9 +16,9 @@ const videos = [
   {
     id: 1,
     title: "Hamster Video 1",
-    duration: "3:30",
+    duration: "18:59",
     url: "https://xhamster46.desi/videos/stepsis-stop-coming-into-my-room-without-asking-or-ill-fuck-you-xhKbpdwv=...", // আপনার ভিডিওর লিংক
-    thumbnail: "https://img.xhamster46.desi/vi/stepsis-stop-coming-into-my-room-without-asking-or-ill-fuck-you-xhKbpdw.jpg...", // এখানে আপনার পছন্দের ছবির ডিরেক্ট লিংক দিন
+    thumbnail: "https://img.xhamster46.desi/vi/stepsis-stop-coming-into-my-room-without-asking-or-ill-fuck-you-xhKbpdw/hqdefault.jpgwithout-asking-or-ill-fuck-you-xhKbpdw.jpg...", // এখানে আপনার পছন্দের ছবির ডিরেক্ট লিংক দিন
   },
   {
     id: 2,
