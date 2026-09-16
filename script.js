@@ -16,8 +16,8 @@ const videos = [
   {
     id: 1,
     title: "Hamster Video 1",
-    duration: "3:30",
-    url: "https://www.youtube.com/embed/dQw4w9WgXcQ" // এখানে আপনার .com বা যেকোনো ওয়েবসাইট/ইউটিউবের এমবেড লিংক দিন
+    duration: "18:59",
+    url: "https://xhamster46.desi/videos/stepsis-stop-coming-into-my-room-without-asking-or-ill-fuck-you-xhKbpdw" // এখানে আপনার .com বা যেকোনো ওয়েবসাইট/ইউটিউবের এমবেড লিংক দিন
   },
   {
     id: 2,
