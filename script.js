@@ -10,22 +10,15 @@ if (tg.initDataUnsafe && tg.initDataUnsafe.user) {
 }
 
 // -------------------------------------------------------------
-// ভিডিওর তালিকা: এখানে আপনার পছন্দমতো যেকোনো ওয়েবসাইট বা ইউটিউবের এমবেড লিংক দিতে পারেন (.com ওয়েবসাইট সাপোর্ট করবে)
+// ভিডিওর তালিকা (ভিডিও এবং থাম্বনেইল লিংক সহ)
 // -------------------------------------------------------------
 const videos = [
   {
     id: 1,
     title: "Hamster Video 1",
-    duration: "18:59",
-    url: "https://xhamster46.desi/videos/stepsis-stop-coming-into-my-room-without-asking-or-ill-fuck-you-xhKbpdwv=...", // আপনার ভিডিওর লিংক
-    thumbnail: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTGOT9K_PT0_5dZ6PrZwwAIvZcSPcIWFeYTKpCZKIopW6c8GgHN.jpg", // এখানে আপনার পছন্দের ছবির ডিরেক্ট লিংক দিন
-  },
-  {
-    id: 2,
-    title: "Hamster Video 2",
     duration: "3:30",
-    url: "https://www.youtube.com/watch?v=...",
-    thumbnail: "https://images.unsplash.com/photo-2...",
+    url: "https://files.catbox.moe/ohubx2.mp4", // ভিডিওর ডিরেক্ট লিংক
+    thumbnail: "https://files.catbox.moe/2h4w0t.webp" // আপনার দেওয়া থাম্বনেইল লিংক
   }
 ];
 
@@ -49,7 +42,6 @@ function renderVideos() {
         let card = document.createElement("div");
         card.className = "video-card";
         
-        // যদি থাম্বনেইল লিংক থাকে তবে ছবি দেখাবে, না থাকলে ডিফল্ট আইকন দেখাবে
         let thumbContent = video.thumbnail 
             ? `<img src="${video.thumbnail}" style="width:100%; height:100%; object-fit:cover; border-radius:6px;">` 
             : `▶`;
@@ -58,7 +50,7 @@ function renderVideos() {
             <div class="thumbnail" style="overflow:hidden; display:flex; align-items:center; justify-content:center;">${thumbContent}</div>
             <div class="video-info">
                 <h3>${video.title}</h3>
-                <p>Duration: ${video.duration} | 📺 Click to Watch</p>
+                <p>Duration: ${video.duration} | 📺 Watch Ad to Play</p>
             </div>
         `;
         card.addEventListener("click", () => triggerAdBeforePlay(video));
@@ -95,20 +87,30 @@ skipAdBtn.addEventListener("click", () => {
     playVideo(selectedVideo);
 });
 
-// // ভিডিও বা লিങ്കে ক্লিক করলে সরাসরি ওপেন করার লজিক
+// টেলিগ্রাম মিনি অ্যাপের ভেতরে সরাসরি ভিডিও প্লে করার লজিক
 function playVideo(video) {
-    if (tg.openLink) {
-        tg.openLink(video.url);
-    } else {
-        window.open(video.url, '_blank');
+    videoListSection.classList.add("hidden");
+    playerSection.classList.remove("hidden");
+    
+    nowPlaying.innerText = video.title;
+    
+    let videoPlayer = document.getElementById("video-player");
+    let videoSource = document.getElementById("video-source");
+    
+    if (videoPlayer && videoSource) {
+        videoPlayer.style.display = "block";
+        videoSource.src = video.url;
+        videoPlayer.load();
+        videoPlayer.play();
     }
 }
 
-// ব্যাক বাটনে ক্লিক করে লিস্টে ফিরে যাওয়া
+// ব্যাক বাটনে ক্লিক করে লিস্টে ফিরে যাওয়া এবং ভিডিও বন্ধ করা
 backBtn.addEventListener("click", () => {
-    let iframe = document.getElementById("video-iframe");
-    if (iframe) {
-        iframe.src = ""; // ভিডিও বা সাইট বন্ধ করার জন্য সোর্স ক্লিয়ার করা
+    let videoPlayer = document.getElementById("video-player");
+    if (videoPlayer) {
+        videoPlayer.pause();
+        videoPlayer.currentTime = 0;
     }
     playerSection.classList.add("hidden");
     videoListSection.classList.remove("hidden");
