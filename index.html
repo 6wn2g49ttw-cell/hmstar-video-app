@@ -3,47 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hamster Video Mini App</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- টেলিগ্রাম ওয়েব অ্যাপ অফিশিয়াল স্ক্রিপ্ট -->
+    <title>Hamster Tube</title>
+    <!-- Telegram WebApp Script -->
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <div class="app-container">
+        <!-- Header Section -->
         <header>
             <h1>🐹 Hamster Video Stream</h1>
-            <p id="username">Loading user...</p>
+            <p id="username">Welcome, Hamster Viewer! 🐹</p>
         </header>
 
-        <!-- ভিডিও প্লেয়ার সেকশন -->
-        <div id="player-section" class="player-section hidden">
-            <video id="video-player" controls width="100%">
-                <source id="video-source" src="" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <h3 id="now-playing">Video Title</h3>
-            <button id="back-btn" class="btn secondary-btn">⬅ Back to List</button>
-        </div>
-
-        <!-- ভিডিও লিস্ট সেকশন -->
-        <div id="video-list-section" class="video-list-section">
-            <h2>Available Videos</h2>
-            <p class="instruction">💡 Watch a short ad to unlock and watch your video!</p>
-            
-            <div class="video-grid" id="video-grid">
-                <!-- জাভাস্ক্রিপ্ট থেকে ভিডিও কার্ডগুলো এখানে আসবে -->
+        <!-- Video List Section -->
+        <section id="video-list-section">
+            <div id="video-grid" class="video-grid">
+                <!-- JavaScript দিয়ে ভিডিও কার্ডগুলো এখানে রেন্ডার হবে -->
             </div>
-        </div>
-    </div>
+        </section>
 
-    <!-- অ্যাড পপআপ মোডাল -->
-    <div id="ad-modal" class="modal hidden">
-        <div class="modal-content">
-            <h2>📺 Hamster Sponsored Ad</h2>
-            <p>Please watch this ad to unlock your video...</p>
-            <div class="ad-timer">Ad playing: <span id="countdown">5</span>s</div>
-            <button id="skip-ad-btn" class="btn primary-btn" disabled>Skip Ad & Watch Video</button>
+        <!-- Player Section -->
+        <section id="player-section" class="hidden">
+            <h2 id="now-playing">Video Title</h2>
+            
+            <!-- যেকোনো .com ওয়েবসাইট বা ভিডিও এমবেড করার জন্য প্লেয়ার র‍্যাপার -->
+            <div id="player-wrapper">
+                <video id="video-player" controls style="width:100%; display:none;">
+                    <source id="video-source" src="" type="video/mp4">
+                </video>
+            </div>
+
+            <button id="back-btn">⬅ Back to List</button>
+        </section>
+
+        <!-- Ad Popup Modal -->
+        <div id="ad-modal" class="modal hidden">
+            <div class="modal-content">
+                <h3>📺 Sponsored Ad</h3>
+                <p>Please watch this ad for <span id="countdown">5</span> seconds...</p>
+                <button id="skip-ad-btn" disabled>Please wait (5s)</button>
+            </div>
         </div>
     </div>
 
