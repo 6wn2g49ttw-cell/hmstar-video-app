@@ -16,8 +16,8 @@ const videos = [
     {
         id: 1,
         title: "Hamster Video 1",
-        duration: "0:30",
-        url: "https://www.w3schools.com/html/mov_bbb.mp4" // এখানে আপনার রিয়েল ভিডিও লিংক দিন
+        duration: "01:58",
+        url: "https://xhamster46.desi/videos/indian-milf-im-sure-you-must-be-jealous-for-not-fucking-her-8392733" // এখানে আপনার রিয়েল ভিডিও লিংক দিন
     },
     {
         id: 2,
